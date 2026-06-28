@@ -1,0 +1,2425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes" />
+    <title>World Cup 2026 Predictions Bracket | توقعات كأس العالم 2026 | Ayham Megdadi</title>
+    <meta name="title" content="World Cup 2026 Predictions Bracket | Free Interactive Tool" />
+    <meta name="description" content="Fill out your FIFA World Cup 2026 bracket predictions! Pick winners from Round of 32 to the Final. Choose top scorer, best player &amp; goalkeeper. Download your bracket as PNG. Free &amp; bilingual (Arabic/English)." />
+    <meta name="keywords" content="World Cup 2026 predictions, FIFA World Cup 2026 bracket, كأس العالم 2026 توقعات" />
+    <meta name="author" content="Ayham Megdadi" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://AyhamMegdadi.github.io/worldcup2026" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://AyhamMegdadi.github.io/worldcup2026" />
+    <meta property="og:title" content="World Cup 2026 Predictions Bracket" />
+    <meta property="og:description" content="Free interactive FIFA World Cup 2026 bracket predictor." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏆</text></svg>" />
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js">
+    </script>
+    <style>
+        /* ── Reset & Base ── */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #0a0e1a;
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+            transition: background 0.3s;
+        }
+        body.rtl {
+            font-family: 'Tajawal', sans-serif;
+            direction: rtl;
+        }
+        body.rtl .en-only {
+            display: none !important;
+        }
+        body:not(.rtl) .ar-only {
+            display: none !important;
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0e1a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FFD700;
+            border-radius: 10px;
+        }
+
+        #particles-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        header {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 20px;
+            background: rgba(10, 14, 26, 0.88);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.10);
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .header-left .github-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.06);
+            transition: background 0.3s, transform 0.2s;
+            color: #fff;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+        .header-left .github-link:hover {
+            background: rgba(255, 215, 0, 0.18);
+            transform: scale(1.06);
+        }
+        .header-left .github-link svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+        .site-title {
+            font-weight: 900;
+            font-size: 1.1rem;
+            letter-spacing: 0.3px;
+            background: linear-gradient(135deg, #FFD700, #f9a825);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            white-space: nowrap;
+        }
+        .header-center {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .visitor-counter {
+            font-size: 0.78rem;
+            color: #A0AEC0;
+            background: rgba(255, 255, 255, 0.04);
+            padding: 3px 14px;
+            border-radius: 40px;
+            border: 1px solid rgba(255, 215, 0, 0.08);
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .visitor-counter .num {
+            color: #FFD700;
+            font-weight: 700;
+            min-width: 50px;
+            display: inline-block;
+            text-align: center;
+            transition: transform 0.15s ease;
+        }
+        .visitor-counter .num.pulse {
+            transform: scale(1.12);
+        }
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .lang-toggle {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 215, 0, 0.15);
+            color: #fff;
+            padding: 5px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+        .lang-toggle:hover {
+            background: rgba(255, 215, 0, 0.12);
+            border-color: #FFD700;
+        }
+        .badge-signature {
+            font-size: 0.65rem;
+            color: rgba(255, 215, 0, 0.4);
+            letter-spacing: 0.4px;
+            font-weight: 400;
+            border: 1px solid rgba(255, 215, 0, 0.06);
+            padding: 2px 12px;
+            border-radius: 40px;
+            background: rgba(255, 215, 0, 0.02);
+            white-space: nowrap;
+        }
+        .badge-signature strong {
+            color: rgba(255, 215, 0, 0.65);
+        }
+
+        main {
+            position: relative;
+            z-index: 5;
+            padding: 16px 12px 32px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .progress-bar-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
+            padding: 10px 18px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 60px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(4px);
+        }
+        .progress-bar-wrap .label {
+            font-size: 0.85rem;
+            color: #A0AEC0;
+            font-weight: 400;
+        }
+        .progress-bar-wrap .label .highlight {
+            color: #FFD700;
+            font-weight: 700;
+        }
+        .progress-track {
+            flex: 1;
+            min-width: 100px;
+            max-width: 260px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.07);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .progress-track .fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #FFD700, #f9a825);
+            border-radius: 10px;
+            transition: width 0.5s ease;
+        }
+        .progress-pct {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #FFD700;
+            min-width: 38px;
+            text-align: center;
+        }
+        .progress-status {
+            font-size: 0.7rem;
+            color: #718096;
+            font-weight: 400;
+            margin-left: 4px;
+        }
+        .progress-status .done {
+            color: #4ade80;
+        }
+
+        .mobile-tabs {
+            display: none;
+            gap: 6px;
+            margin-bottom: 14px;
+            padding: 4px 4px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            flex-wrap: nowrap;
+        }
+        .mobile-tabs .tab {
+            flex: 1 0 auto;
+            padding: 8px 12px;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #718096;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            text-align: center;
+            min-width: 44px;
+            white-space: nowrap;
+        }
+        .mobile-tabs .tab.active {
+            background: rgba(255, 215, 0, 0.12);
+            color: #FFD700;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.05);
+        }
+        .mobile-tabs .tab .badge {
+            display: inline-block;
+            font-size: 0.55rem;
+            background: rgba(255, 255, 255, 0.06);
+            padding: 0 6px;
+            border-radius: 20px;
+            margin-left: 4px;
+            color: #A0AEC0;
+        }
+        .mobile-tabs .tab.active .badge {
+            background: rgba(255, 215, 0, 0.15);
+            color: #FFD700;
+        }
+        .mobile-tabs .tab .badge.done {
+            color: #4ade80;
+        }
+
+        .bracket-wrap {
+            position: relative;
+            overflow-x: auto;
+            overflow-y: visible;
+            padding: 10px 4px 16px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(255, 215, 0, 0.03);
+            -webkit-overflow-scrolling: touch;
+        }
+        .bracket-inner {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            justify-content: center;
+            gap: 10px;
+            min-width: fit-content;
+            padding: 6px 6px;
+            position: relative;
+        }
+
+        .round-col {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            gap: 6px;
+            min-width: 130px;
+            max-width: 160px;
+            flex-shrink: 0;
+            position: relative;
+        }
+        .round-col .round-label {
+            text-align: center;
+            font-size: 0.55rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: rgba(255, 215, 0, 0.25);
+            font-weight: 700;
+            padding-bottom: 4px;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.04);
+            margin-bottom: 2px;
+        }
+        .round-col .round-label .check {
+            color: #4ade80;
+            margin-left: 4px;
+        }
+        .round-col.center-col {
+            justify-content: center;
+            min-width: 150px;
+            max-width: 180px;
+        }
+        .round-col.center-col .round-label {
+            border-bottom-color: rgba(255, 215, 0, 0.10);
+        }
+
+        .match-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 5px 7px;
+            transition: all 0.35s ease;
+            cursor: default;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            min-height: 44px;
+        }
+        .match-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 215, 0, 0.08);
+        }
+        .match-card .teams {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .match-card .team-row {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 3px 6px;
+            border-radius: 6px;
+            transition: all 0.25s ease;
+            cursor: pointer;
+            font-size: 0.7rem;
+            font-weight: 400;
+            color: #cbd5e0;
+            position: relative;
+            min-height: 28px;
+        }
+        .match-card .team-row:hover:not(.disabled):not(.loser):not(.tbd) {
+            background: rgba(255, 215, 0, 0.07);
+        }
+        .match-card .team-row .flag {
+            font-size: 1rem;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+        .match-card .team-row .tname {
+            flex: 1;
+            line-height: 1.2;
+            word-break: break-word;
+            font-size: 0.7rem;
+        }
+        .match-card .team-row .tname.ar {
+            font-family: 'Tajawal', sans-serif;
+        }
+        .match-card .team-row .tname.en {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .match-card .team-row.winner {
+            background: rgba(255, 215, 0, 0.10);
+            border: 1px solid #FFD700;
+            border-radius: 6px;
+            color: #fff;
+            font-weight: 700;
+            box-shadow: 0 0 24px rgba(255, 215, 0, 0.06);
+        }
+        .match-card .team-row.winner .tname {
+            color: #FFD700;
+        }
+        .match-card .team-row.loser {
+            opacity: 0.30;
+            text-decoration: line-through;
+            pointer-events: none;
+        }
+        .match-card .team-row.loser .tname {
+            color: #718096;
+        }
+        .match-card .team-row.disabled {
+            pointer-events: none;
+            opacity: 0.4;
+        }
+        .match-card .team-row.tbd {
+            color: #4a5568;
+            font-style: italic;
+            pointer-events: none;
+        }
+        .match-card .team-row:not(.winner):not(.loser):not(.disabled):not(.tbd):hover {
+            background: rgba(255, 215, 0, 0.07);
+            border-color: rgba(255, 215, 0, 0.12);
+        }
+
+        .match-card .team-row:not(.disabled):not(.loser):not(.tbd):hover::after {
+            content: attr(data-tip);
+            position: absolute;
+            bottom: calc(100% + 6px);
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(10, 14, 26, 0.92);
+            color: #FFD700;
+            font-size: 0.55rem;
+            padding: 3px 10px;
+            border-radius: 6px;
+            white-space: nowrap;
+            border: 1px solid rgba(255, 215, 0, 0.10);
+            pointer-events: none;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+            z-index: 20;
+        }
+        body.rtl .match-card .team-row:not(.disabled):not(.loser):not(.tbd):hover::after {
+            content: attr(data-tip-ar);
+        }
+
+        .match-card.champion-card {
+            border-color: #FFD700;
+            background: rgba(255, 215, 0, 0.06);
+            box-shadow: 0 0 60px rgba(255, 215, 0, 0.08);
+            animation: champGlow 2s ease-in-out infinite alternate;
+        }
+        @keyframes champGlow {
+            0% {
+                box-shadow: 0 0 30px rgba(255, 215, 0, 0.03);
+            }
+            100% {
+                box-shadow: 0 0 80px rgba(255, 215, 0, 0.14);
+            }
+        }
+
+        .match-card .vs {
+            font-size: 0.5rem;
+            color: rgba(255, 255, 255, 0.10);
+            text-align: center;
+            padding: 0 0 1px 0;
+            letter-spacing: 2px;
+        }
+
+        .bracket-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .bracket-svg line {
+            stroke: rgba(255, 215, 0, 0.08);
+            stroke-width: 1.5;
+            stroke-linecap: round;
+        }
+        .bracket-svg line.active {
+            stroke: rgba(255, 215, 0, 0.25);
+            stroke-width: 2;
+        }
+
+        .awards-section {
+            display: none;
+            margin-top: 32px;
+            padding: 24px 20px 28px;
+            background: rgba(255, 255, 255, 0.015);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 215, 0, 0.06);
+            backdrop-filter: blur(8px);
+            animation: fadeUp 0.6s ease;
+        }
+        .awards-section.visible {
+            display: block;
+        }
+        @keyframes fadeUp {
+            0% {
+                opacity: 0;
+                transform: translateY(28px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .awards-section .awards-title {
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #FFD700;
+            margin-bottom: 18px;
+            letter-spacing: 0.5px;
+        }
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            max-width: 780px;
+            margin: 0 auto;
+        }
+        .award-item {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 16px;
+            padding: 14px 16px 18px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            transition: border 0.3s;
+        }
+        .award-item:hover {
+            border-color: rgba(255, 215, 0, 0.08);
+        }
+        .award-item .award-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #A0AEC0;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 6px;
+        }
+        .award-item .award-label .emoji {
+            font-size: 1.1rem;
+        }
+        .award-item select {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 9px 12px;
+            color: #fff;
+            font-size: 0.85rem;
+            font-family: inherit;
+            transition: border 0.3s, background 0.3s;
+            outline: none;
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23A0AEC0' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            padding-right: 36px;
+        }
+        .award-item select:focus {
+            border-color: #FFD700;
+            background-color: rgba(255, 215, 0, 0.03);
+        }
+        .award-item select option {
+            background: #0a0e1a;
+            color: #fff;
+        }
+        .award-item select option:checked {
+            background: rgba(255, 215, 0, 0.15);
+        }
+        .award-item select:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+        body.rtl .award-item select {
+            background-position: left 12px center;
+            padding-right: 12px;
+            padding-left: 36px;
+            text-align: right;
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            margin-top: 28px;
+        }
+        .btn {
+            padding: 12px 28px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.35s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: inherit;
+            letter-spacing: 0.2px;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #FFD700, #f9a825);
+            color: #0a0e1a;
+            box-shadow: 0 8px 32px rgba(255, 215, 0, 0.12);
+        }
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 48px rgba(255, 215, 0, 0.22);
+        }
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.09);
+            border-color: rgba(255, 255, 255, 0.12);
+            transform: translateY(-2px);
+        }
+        .btn-danger {
+            background: rgba(192, 57, 43, 0.12);
+            color: #e74c3c;
+            border: 1px solid rgba(192, 57, 43, 0.15);
+        }
+        .btn-danger:hover {
+            background: rgba(192, 57, 43, 0.22);
+            transform: translateY(-2px);
+        }
+        .btn:disabled {
+            opacity: 0.35;
+            pointer-events: none;
+            transform: none !important;
+        }
+        .btn .icon {
+            font-size: 1.1rem;
+        }
+
+        .watermark {
+            position: absolute;
+            bottom: 10px;
+            right: 14px;
+            font-size: 0.5rem;
+            color: rgba(255, 215, 0, 0.04);
+            font-weight: 700;
+            letter-spacing: 2px;
+            transform: rotate(-5deg);
+            pointer-events: none;
+            z-index: 0;
+            white-space: nowrap;
+        }
+        body.rtl .watermark {
+            right: auto;
+            left: 14px;
+            transform: rotate(5deg);
+        }
+
+        footer {
+            position: relative;
+            z-index: 5;
+            text-align: center;
+            padding: 24px 16px 16px;
+            color: rgba(255, 255, 255, 0.12);
+            font-size: 0.75rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.015);
+            margin-top: 16px;
+        }
+        footer .heart {
+            color: #C0392B;
+        }
+        footer .name {
+            color: rgba(255, 215, 0, 0.35);
+            font-weight: 600;
+        }
+
+        .champion-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 14, 26, 0.88);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            animation: overlayFade 0.5s ease;
+            padding: 20px;
+        }
+        .champion-overlay.visible {
+            display: flex;
+        }
+        @keyframes overlayFade {
+            0% {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .champion-overlay .flag-big {
+            font-size: 5rem;
+            margin-bottom: 12px;
+        }
+        .champion-overlay .title-big {
+            font-size: 2.4rem;
+            font-weight: 900;
+            color: #FFD700;
+            text-shadow: 0 0 60px rgba(255, 215, 0, 0.15);
+        }
+        .champion-overlay .name-big {
+            font-size: 1.4rem;
+            color: #fff;
+            margin-top: 6px;
+            font-weight: 600;
+        }
+        .champion-overlay .sub-big {
+            font-size: 1rem;
+            color: #A0AEC0;
+            margin-top: 4px;
+        }
+        .champion-overlay .confetti-burst {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .confetti-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 999;
+            overflow: hidden;
+        }
+        .confetti-piece {
+            position: absolute;
+            top: -20px;
+            animation: confettiFall linear forwards;
+        }
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(110vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        .champion-burst {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+            animation: burstPulse 2s ease-in-out infinite alternate;
+        }
+        @keyframes burstPulse {
+            0% {
+                transform: translate(-50%, -50%) scale(0.8);
+                opacity: 0.2;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1.5);
+                opacity: 0.6;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .mobile-tabs {
+                display: flex;
+            }
+            .bracket-inner {
+                display: none;
+            }
+            .bracket-inner.mobile-active {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                min-width: unset;
+                padding: 4px 2px;
+            }
+            .bracket-inner.mobile-active .round-col {
+                display: none;
+                min-width: unset;
+                max-width: unset;
+                width: 100%;
+                gap: 8px;
+            }
+            .bracket-inner.mobile-active .round-col.active-col {
+                display: flex;
+            }
+            .bracket-inner.mobile-active .round-col .round-label {
+                font-size: 0.65rem;
+                padding-bottom: 6px;
+                margin-bottom: 4px;
+                border-bottom-color: rgba(255, 215, 0, 0.08);
+            }
+            .bracket-inner.mobile-active .match-card {
+                padding: 8px 10px;
+                min-height: 56px;
+                border-radius: 14px;
+            }
+            .bracket-inner.mobile-active .match-card .team-row {
+                padding: 6px 10px;
+                font-size: 0.85rem;
+                min-height: 36px;
+                gap: 8px;
+            }
+            .bracket-inner.mobile-active .match-card .team-row .flag {
+                font-size: 1.3rem;
+            }
+            .bracket-inner.mobile-active .match-card .team-row .tname {
+                font-size: 0.85rem;
+            }
+            .bracket-inner.mobile-active .match-card .vs {
+                font-size: 0.55rem;
+                padding: 1px 0;
+            }
+            .bracket-inner.mobile-active .watermark {
+                display: none;
+            }
+            .bracket-svg {
+                display: none !important;
+            }
+            .bracket-wrap {
+                padding: 8px 2px 12px;
+                overflow-x: visible;
+                border-radius: 16px;
+            }
+            .round-col.center-col {
+                min-width: unset;
+                max-width: unset;
+            }
+            .progress-bar-wrap {
+                padding: 8px 14px;
+                font-size: 0.7rem;
+                gap: 8px;
+                border-radius: 40px;
+            }
+            .progress-track {
+                min-width: 60px;
+                max-width: 160px;
+                height: 4px;
+            }
+            .progress-pct {
+                font-size: 0.65rem;
+                min-width: 30px;
+            }
+            .awards-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            .awards-section {
+                padding: 18px 14px 22px;
+            }
+            .awards-section .awards-title {
+                font-size: 1.1rem;
+            }
+            .btn {
+                padding: 10px 18px;
+                font-size: 0.8rem;
+                gap: 8px;
+            }
+            header {
+                padding: 8px 12px;
+                gap: 6px;
+            }
+            .site-title {
+                font-size: 0.85rem;
+            }
+            .header-left .github-link {
+                width: 30px;
+                height: 30px;
+            }
+            .header-left .github-link svg {
+                width: 16px;
+                height: 16px;
+            }
+            .visitor-counter {
+                font-size: 0.6rem;
+                padding: 2px 10px;
+            }
+            .visitor-counter .num {
+                min-width: 40px;
+            }
+            .badge-signature {
+                font-size: 0.5rem;
+                padding: 1px 8px;
+            }
+            .lang-toggle {
+                font-size: 0.65rem;
+                padding: 3px 10px;
+            }
+            .champion-overlay .flag-big {
+                font-size: 3.5rem;
+            }
+            .champion-overlay .title-big {
+                font-size: 1.8rem;
+            }
+            .champion-overlay .name-big {
+                font-size: 1.1rem;
+            }
+            footer {
+                font-size: 0.6rem;
+                padding: 16px 10px 12px;
+            }
+            .scroll-hint {
+                display: none !important;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .mobile-tabs {
+                display: none !important;
+            }
+            .bracket-inner.mobile-active {
+                display: flex !important;
+                flex-direction: row !important;
+            }
+            .bracket-inner.mobile-active .round-col {
+                display: flex !important;
+            }
+            .bracket-inner.mobile-active .round-col.active-col {
+                display: flex !important;
+            }
+            .bracket-inner {
+                display: flex !important;
+                flex-direction: row !important;
+            }
+            .round-col {
+                display: flex !important;
+            }
+            .scroll-hint {
+                text-align: center;
+                font-size: 0.6rem;
+                color: rgba(255, 215, 0, 0.12);
+                padding: 4px 0 2px;
+                letter-spacing: 1px;
+                display: block;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1200px) {
+            .round-col {
+                min-width: 110px;
+                max-width: 135px;
+            }
+            .round-col.center-col {
+                min-width: 120px;
+                max-width: 150px;
+            }
+            .match-card .team-row {
+                font-size: 0.6rem;
+                padding: 2px 4px;
+                min-height: 24px;
+            }
+            .match-card .team-row .flag {
+                font-size: 0.8rem;
+            }
+            .match-card .team-row .tname {
+                font-size: 0.6rem;
+            }
+        }
+
+        @media (min-width: 1201px) {
+            .round-col {
+                min-width: 150px;
+                max-width: 180px;
+            }
+            .round-col.center-col {
+                min-width: 170px;
+                max-width: 200px;
+            }
+        }
+
+        .hidden {
+            display: none !important;
+        }
+        .fade-out {
+            animation: fadeOut 0.45s ease forwards;
+        }
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0.96);
+            }
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease forwards;
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.96);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .text-gold {
+            color: #FFD700;
+        }
+        .text-muted {
+            color: #A0AEC0;
+        }
+
+        .export-only {
+            display: none;
+        }
+        .export-visible {
+            display: block !important;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="particles-canvas"></canvas>
+
+    <header id="main-header">
+        <div class="header-left">
+            <a class="github-link" href="https://github.com/Ayham-Megdadi" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            </a>
+            <span class="site-title">
+                <span class="en-only">🏆 World Cup 2026 Predictions</span>
+                <span class="ar-only">🏆 توقعات كأس العالم 2026</span>
+            </span>
+        </div>
+        <div class="header-center">
+            <div class="visitor-counter">
+                👁 <span class="num" id="counter-num">0</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <span class="badge-signature"><strong>Ayham_Megdadi</strong></span>
+            <button class="lang-toggle" id="lang-toggle" aria-label="Toggle Language">🇸🇦 AR / EN</button>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <div class="progress-bar-wrap" id="progress-wrap">
+            <span class="label" id="progress-label">
+                <span class="en-only">Round of 32: <span class="highlight" id="progress-count">0</span>/16 complete</span>
+                <span class="ar-only">دور الـ32: <span class="highlight" id="progress-count-ar">0</span>/16 مكتمل</span>
+            </span>
+            <span class="progress-status" id="progress-status"></span>
+            <div class="progress-track">
+                <div class="fill" id="progress-fill" style="width:0%;"></div>
+            </div>
+            <span class="progress-pct" id="progress-pct">0%</span>
+        </div>
+
+        <div class="mobile-tabs" id="mobile-tabs">
+            <button class="tab active" data-round="32">R32 <span class="badge" id="tab-badge-32">0/16</span></button>
+            <button class="tab" data-round="16">R16 <span class="badge" id="tab-badge-16">0/8</span></button>
+            <button class="tab" data-round="quarter">QF <span class="badge" id="tab-badge-quarter">0/4</span></button>
+            <button class="tab" data-round="semi">SF <span class="badge" id="tab-badge-semi">0/2</span></button>
+            <button class="tab" data-round="final">🏆 <span class="badge" id="tab-badge-final">0/1</span></button>
+        </div>
+
+        <div class="bracket-wrap" id="bracket-wrap">
+            <div class="bracket-inner" id="bracket-inner">
+                <div class="watermark">Ayham_Megdadi</div>
+            </div>
+            <div class="scroll-hint">← scroll →</div>
+        </div>
+
+        <div class="awards-section" id="awards-section">
+            <div class="awards-title">
+                <span class="trophy-icon">🏆</span>
+                <span class="en-only">Awards</span>
+                <span class="ar-only">الجوائز</span>
+            </div>
+            <div class="awards-grid">
+                <div class="award-item">
+                    <div class="award-label"><span class="emoji">🥇</span> <span class="en-only">Top Scorer</span><span class="ar-only">الهداف</span></div>
+                    <select id="award-scorer" class="en-only">
+                        <option value="">— Select —</option>
+                        <option value="Kylian Mbappé">Kylian Mbappé (France)</option>
+                        <option value="Erling Haaland">Erling Haaland (Norway)</option>
+                        <option value="Vinícius Jr.">Vinícius Jr. (Brazil)</option>
+                        <option value="Harry Kane">Harry Kane (England)</option>
+                        <option value="Robert Lewandowski">Robert Lewandowski (Poland)</option>
+                        <option value="Lionel Messi">Lionel Messi (Argentina)</option>
+                        <option value="Cristiano Ronaldo">Cristiano Ronaldo (Portugal)</option>
+                        <option value="Neymar Jr.">Neymar Jr. (Brazil)</option>
+                        <option value="Ollie Watkins">Ollie Watkins (England)</option>
+                        <option value="Victor Osimhen">Victor Osimhen (Nigeria)</option>
+                        <option value="Randal Kolo Muani">Randal Kolo Muani (France)</option>
+                        <option value="Julián Álvarez">Julián Álvarez (Argentina)</option>
+                        <option value="Jamal Musiala">Jamal Musiala (Germany)</option>
+                        <option value="Florian Wirtz">Florian Wirtz (Germany)</option>
+                    </select>
+                    <select id="award-scorer-ar" class="ar-only">
+                        <option value="">— اختر —</option>
+                        <option value="كيليان مبابي">كيليان مبابي (فرنسا)</option>
+                        <option value="إيرلينغ هالاند">إيرلينغ هالاند (النرويج)</option>
+                        <option value="فينيسيوس جونيور">فينيسيوس جونيور (البرازيل)</option>
+                        <option value="هاري كين">هاري كين (إنجلترا)</option>
+                        <option value="روبرت ليفاندوفسكي">روبرت ليفاندوفسكي (بولندا)</option>
+                        <option value="ليونيل ميسي">ليونيل ميسي (الأرجنتين)</option>
+                        <option value="كريستيانو رونالدو">كريستيانو رونالدو (البرتغال)</option>
+                        <option value="نيمار جونيور">نيمار جونيور (البرازيل)</option>
+                        <option value="أولي واتكينز">أولي واتكينز (إنجلترا)</option>
+                        <option value="فيكتور أوسيمين">فيكتور أوسيمين (نيجيريا)</option>
+                        <option value="راندال كولو مواني">راندال كولو مواني (فرنسا)</option>
+                        <option value="جوليان ألفاريز">جوليان ألفاريز (الأرجنتين)</option>
+                        <option value="جمال موسيالا">جمال موسيالا (ألمانيا)</option>
+                        <option value="فلوريان فيرتز">فلوريان فيرتز (ألمانيا)</option>
+                    </select>
+                </div>
+
+                <div class="award-item">
+                    <div class="award-label"><span class="emoji">⭐</span> <span class="en-only">Best Player</span><span class="ar-only">أفضل لاعب</span></div>
+                    <select id="award-player" class="en-only">
+                        <option value="">— Select —</option>
+                        <option value="Vinícius Jr.">Vinícius Jr. (Brazil)</option>
+                        <option value="Jude Bellingham">Jude Bellingham (England)</option>
+                        <option value="Kylian Mbappé">Kylian Mbappé (France)</option>
+                        <option value="Erling Haaland">Erling Haaland (Norway)</option>
+                        <option value="Kevin De Bruyne">Kevin De Bruyne (Belgium)</option>
+                        <option value="Lionel Messi">Lionel Messi (Argentina)</option>
+                        <option value="Rodri">Rodri (Spain)</option>
+                        <option value="Phil Foden">Phil Foden (England)</option>
+                        <option value="Jamal Musiala">Jamal Musiala (Germany)</option>
+                        <option value="Florian Wirtz">Florian Wirtz (Germany)</option>
+                        <option value="Bukayo Saka">Bukayo Saka (England)</option>
+                        <option value="Declan Rice">Declan Rice (England)</option>
+                    </select>
+                    <select id="award-player-ar" class="ar-only">
+                        <option value="">— اختر —</option>
+                        <option value="فينيسيوس جونيور">فينيسيوس جونيور (البرازيل)</option>
+                        <option value="جود بيلينغهام">جود بيلينغهام (إنجلترا)</option>
+                        <option value="كيليان مبابي">كيليان مبابي (فرنسا)</option>
+                        <option value="إيرلينغ هالاند">إيرلينغ هالاند (النرويج)</option>
+                        <option value="كيفين دي بروين">كيفين دي بروين (بلجيكا)</option>
+                        <option value="ليونيل ميسي">ليونيل ميسي (الأرجنتين)</option>
+                        <option value="رودري">رودري (إسبانيا)</option>
+                        <option value="فيل فودن">فيل فودن (إنجلترا)</option>
+                        <option value="جمال موسيالا">جمال موسيالا (ألمانيا)</option>
+                        <option value="فلوريان فيرتز">فلوريان فيرتز (ألمانيا)</option>
+                        <option value="بوكايو ساكا">بوكايو ساكا (إنجلترا)</option>
+                        <option value="ديكلان رايس">ديكلان رايس (إنجلترا)</option>
+                    </select>
+                </div>
+
+                <div class="award-item">
+                    <div class="award-label"><span class="emoji">🧤</span> <span class="en-only">Best Goalkeeper</span><span class="ar-only">أفضل حارس</span></div>
+                    <select id="award-keeper" class="en-only">
+                        <option value="">— Select —</option>
+                        <option value="Thibaut Courtois">Thibaut Courtois (Belgium)</option>
+                        <option value="Alisson Becker">Alisson Becker (Brazil)</option>
+                        <option value="Marc-André ter Stegen">Marc-André ter Stegen (Germany)</option>
+                        <option value="Jan Oblak">Jan Oblak (Slovenia)</option>
+                        <option value="Manuel Neuer">Manuel Neuer (Germany)</option>
+                        <option value="Mike Maignan">Mike Maignan (France)</option>
+                        <option value="Ederson">Ederson (Brazil)</option>
+                        <option value="Gianluigi Donnarumma">Gianluigi Donnarumma (Italy)</option>
+                        <option value="David de Gea">David de Gea (Spain)</option>
+                        <option value="Unai Simón">Unai Simón (Spain)</option>
+                        <option value="Emiliano Martínez">Emiliano Martínez (Argentina)</option>
+                        <option value="André Onana">André Onana (Cameroon)</option>
+                    </select>
+                    <select id="award-keeper-ar" class="ar-only">
+                        <option value="">— اختر —</option>
+                        <option value="تيبو كورتوا">تيبو كورتوا (بلجيكا)</option>
+                        <option value="أليسون بيكر">أليسون بيكر (البرازيل)</option>
+                        <option value="مارك أندريه تير شتيجن">مارك أندريه تير شتيجن (ألمانيا)</option>
+                        <option value="يان أوبلاك">يان أوبلاك (سلوفينيا)</option>
+                        <option value="مانويل نوير">مانويل نوير (ألمانيا)</option>
+                        <option value="مايك ماينان">مايك ماينان (فرنسا)</option>
+                        <option value="إيدرسون">إيدرسون (البرازيل)</option>
+                        <option value="جيانلويجي دوناروما">جيانلويجي دوناروما (إيطاليا)</option>
+                        <option value="ديفيد دي خيا">ديفيد دي خيا (إسبانيا)</option>
+                        <option value="أوناي سيمون">أوناي سيمون (إسبانيا)</option>
+                        <option value="إميليانو مارتينيز">إميليانو مارتينيز (الأرجنتين)</option>
+                        <option value="أندريه أونانا">أندريه أونانا (الكاميرون)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="actions" id="action-buttons">
+                <button class="btn btn-danger" id="btn-reset"><span class="icon">🔄</span> <span class="en-only">Reset Predictions</span><span class="ar-only">إعادة التوقعات</span></button>
+                <button class="btn btn-primary" id="btn-download" disabled><span class="icon">📸</span> <span class="en-only">Download My Prediction</span><span class="ar-only">تحميل توقعي</span></button>
+            </div>
+        </div>
+    </main>
+
+    <footer id="page-footer">
+        <span class="en-only">© Ayham_Megdadi • World Cup 2026</span>
+        <span class="ar-only">© أيهام_مقدادي • كأس العالم 2026</span>
+    </footer>
+
+    <div class="champion-overlay" id="champion-overlay">
+        <div class="confetti-burst" id="overlay-confetti"></div>
+        <div class="flag-big" id="champion-flag">🏆</div>
+        <div class="title-big" id="champion-title">🏆 Champion!</div>
+        <div class="name-big" id="champion-name">Team Name</div>
+        <div class="sub-big" id="champion-sub">World Cup 2026 Winner</div>
+    </div>
+
+    <div class="confetti-container" id="confetti-container"></div>
+
+    <script>
+        // ═══════════════════════════════════════════════════════════════
+        //  DATA — 32 Teams, 31 Matches
+        // ═══════════════════════════════════════════════════════════════
+
+        const TEAM_DATA = {
+            left: [
+                { id: 'L1', en: 'Germany', ar: 'ألمانيا', flag: '🇩🇪' },
+                { id: 'L2', en: 'France', ar: 'فرنسا', flag: '🇫🇷' },
+                { id: 'L3', en: 'South Africa', ar: 'جنوب أفريقيا', flag: '🇿🇦' },
+                { id: 'L4', en: 'Netherlands', ar: 'هولندا', flag: '🇳🇱' },
+                { id: 'L5', en: 'Portugal', ar: 'البرتغال', flag: '🇵🇹' },
+                { id: 'L6', en: 'Spain', ar: 'إسبانيا', flag: '🇪🇸' },
+                { id: 'L7', en: 'USA', ar: 'الولايات المتحدة', flag: '🇺🇸' },
+                { id: 'L8', en: 'Belgium', ar: 'بلجيكا', flag: '🇧🇪' }
+            ],
+            right: [
+                { id: 'R1', en: 'Brazil', ar: 'البرازيل', flag: '🇧🇷' },
+                { id: 'R2', en: 'Ivory Coast', ar: 'ساحل العاج', flag: '🇨🇮' },
+                { id: 'R3', en: 'Mexico', ar: 'المكسيك', flag: '🇲🇽' },
+                { id: 'R4', en: 'England', ar: 'إنجلترا', flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿' },
+                { id: 'R5', en: 'Argentina', ar: 'الأرجنتين', flag: '🇦🇷' },
+                { id: 'R6', en: 'Australia', ar: 'أستراليا', flag: '🇦🇺' },
+                { id: 'R7', en: 'Switzerland', ar: 'سويسرا', flag: '🇨🇭' },
+                { id: 'R8', en: 'Colombia', ar: 'كولومبيا', flag: '🇨🇴' }
+            ]
+        };
+
+        const OPP_LEFT = [
+            { en: 'Paraguay', ar: 'باراغواي', flag: '🇵🇾' },
+            { en: 'Sweden', ar: 'السويد', flag: '🇸🇪' },
+            { en: 'Canada', ar: 'كندا', flag: '🇨🇦' },
+            { en: 'Morocco', ar: 'المغرب', flag: '🇲🇦' },
+            { en: 'Croatia', ar: 'كرواتيا', flag: '🇭🇷' },
+            { en: 'Austria', ar: 'النمسا', flag: '🇦🇹' },
+            { en: 'Bosnia', ar: 'البوسنة', flag: '🇧🇦' },
+            { en: 'Senegal', ar: 'السنغال', flag: '🇸🇳' }
+        ];
+        const OPP_RIGHT = [
+            { en: 'Japan', ar: 'اليابان', flag: '🇯🇵' },
+            { en: 'Norway', ar: 'النرويج', flag: '🇳🇴' },
+            { en: 'Ecuador', ar: 'الإكوادور', flag: '🇪🇨' },
+            { en: 'DR Congo', ar: 'الكونغو', flag: '🇨🇩' },
+            { en: 'Cape Verde', ar: 'الرأس الأخضر', flag: '🇨🇻' },
+            { en: 'Egypt', ar: 'مصر', flag: '🇪🇬' },
+            { en: 'Algeria', ar: 'الجزائر', flag: '🇩🇿' },
+            { en: 'Ghana', ar: 'غانا', flag: '🇬🇭' }
+        ];
+
+        let allMatches = [];
+        let matchMap = {};
+
+        function buildMatches() {
+            allMatches = [];
+            matchMap = {};
+
+            for (let i = 0; i < 8; i++) {
+                const t = TEAM_DATA.left[i];
+                const o = OPP_LEFT[i];
+                const m = {
+                    id: 'r32_L' + i,
+                    round: '32',
+                    side: 'left',
+                    row: i * 2,
+                    team1: { en: t.en, ar: t.ar, flag: t.flag },
+                    team2: { en: o.en, ar: o.ar, flag: o.flag },
+                    winner: null,
+                    parent1: null,
+                    parent2: null,
+                    child: null
+                };
+                allMatches.push(m);
+                matchMap[m.id] = m;
+            }
+
+            for (let i = 0; i < 8; i++) {
+                const t = TEAM_DATA.right[i];
+                const o = OPP_RIGHT[i];
+                const m = {
+                    id: 'r32_R' + i,
+                    round: '32',
+                    side: 'right',
+                    row: i * 2,
+                    team1: { en: t.en, ar: t.ar, flag: t.flag },
+                    team2: { en: o.en, ar: o.ar, flag: o.flag },
+                    winner: null,
+                    parent1: null,
+                    parent2: null,
+                    child: null
+                };
+                allMatches.push(m);
+                matchMap[m.id] = m;
+            }
+
+            for (let i = 0; i < 4; i++) {
+                const p1 = 'r32_L' + (i * 2);
+                const p2 = 'r32_L' + (i * 2 + 1);
+                const m = {
+                    id: 'r16_L' + i,
+                    round: '16',
+                    side: 'left',
+                    row: i * 4 + 1,
+                    team1: null,
+                    team2: null,
+                    winner: null,
+                    parent1: p1,
+                    parent2: p2,
+                    child: null
+                };
+                allMatches.push(m);
+                matchMap[m.id] = m;
+            }
+
+            for (let i = 0; i < 4; i++) {
+                const p1 = 'r32_R' + (i * 2);
+                const p2 = 'r32_R' + (i * 2 + 1);
+                const m = {
+                    id: 'r16_R' + i,
+                    round: '16',
+                    side: 'right',
+                    row: i * 4 + 1,
+                    team1: null,
+                    team2: null,
+                    winner: null,
+                    parent1: p1,
+                    parent2: p2,
+                    child: null
+                };
+                allMatches.push(m);
+                matchMap[m.id] = m;
+            }
+
+            for (let i = 0; i < 2; i++) {
+                const p1 = 'r16_L' + (i * 2);
+                const p2 = 'r16_L' + (i * 2 + 1);
+                const m = {
+                    id: 'qf_L' + i,
+                    round: 'quarter',
+                    side: 'left',
+                    row: i * 8 + 3,
+                    team1: null,
+                    team2: null,
+                    winner: null,
+                    parent1: p1,
+                    parent2: p2,
+                    child: null
+                };
+                allMatches.push(m);
+                matchMap[m.id] = m;
+            }
+
+            for (let i = 0; i < 2; i++) {
+                const p1 = 'r16_R' + (i * 2);
+                const p2 = 'r16_R' + (i * 2 + 1);
+                const m = {
+                    id: 'qf_R' + i,
+                    round: 'quarter',
+                    side: 'right',
+                    row: i * 8 + 3,
+                    team1: null,
+                    team2: null,
+                    winner: null,
+                    parent1: p1,
+                    parent2: p2,
+                    child: null
+                };
+                allMatches.push(m);
+                matchMap[m.id] = m;
+            }
+
+            const sfL = {
+                id: 'sf_L',
+                round: 'semi',
+                side: 'left',
+                row: 7,
+                team1: null,
+                team2: null,
+                winner: null,
+                parent1: 'qf_L0',
+                parent2: 'qf_L1',
+                child: null
+            };
+            allMatches.push(sfL);
+            matchMap[sfL.id] = sfL;
+
+            const sfR = {
+                id: 'sf_R',
+                round: 'semi',
+                side: 'right',
+                row: 7,
+                team1: null,
+                team2: null,
+                winner: null,
+                parent1: 'qf_R0',
+                parent2: 'qf_R1',
+                child: null
+            };
+            allMatches.push(sfR);
+            matchMap[sfR.id] = sfR;
+
+            const fin = {
+                id: 'final',
+                round: 'final',
+                side: 'center',
+                row: 7,
+                team1: null,
+                team2: null,
+                winner: null,
+                parent1: 'sf_L',
+                parent2: 'sf_R',
+                child: null
+            };
+            allMatches.push(fin);
+            matchMap[fin.id] = fin;
+
+            for (const m of allMatches) {
+                if (m.parent1) {
+                    const p = matchMap[m.parent1];
+                    if (p) p.child = m.id;
+                }
+                if (m.parent2) {
+                    const p = matchMap[m.parent2];
+                    if (p) p.child = m.id;
+                }
+            }
+
+            const canadaMatch = matchMap['r32_L2'];
+            if (canadaMatch && canadaMatch.team2) {
+                canadaMatch.winner = { en: canadaMatch.team2.en, ar: canadaMatch.team2.ar, flag: canadaMatch.team2.flag };
+            }
+        }
+
+        buildMatches();
+
+        function cloneTeam(t) {
+            if (!t) return null;
+            return { en: t.en, ar: t.ar, flag: t.flag };
+        }
+
+        function teamsEqual(a, b) {
+            if (!a || !b) return false;
+            return a.en === b.en && a.flag === b.flag && a.ar === b.ar;
+        }
+
+        function getMatchTeams(match) {
+            if (match.round === '32') {
+                return {
+                    t1: match.team1 ? { ...match.team1 } : null,
+                    t2: match.team2 ? { ...match.team2 } : null
+                };
+            }
+            const p1 = match.parent1 ? matchMap[match.parent1] : null;
+            const p2 = match.parent2 ? matchMap[match.parent2] : null;
+            const w1 = p1 ? p1.winner : null;
+            const w2 = p2 ? p2.winner : null;
+            return {
+                t1: w1 ? { ...w1 } : null,
+                t2: w2 ? { ...w2 } : null
+            };
+        }
+
+        function countRoundPicks(round) {
+            const ms = allMatches.filter(m => m.round === round);
+            let done = 0;
+            for (const m of ms) {
+                if (m.winner) done++;
+            }
+            return done;
+        }
+
+        function totalMatchesInRound(round) {
+            return allMatches.filter(m => m.round === round).length;
+        }
+
+        function isRoundComplete(round) {
+            const ms = allMatches.filter(m => m.round === round);
+            return ms.length > 0 && ms.every(m => m.winner !== null);
+        }
+
+        function getUnlockedRounds() {
+            const unlocked = ['32'];
+            if (isRoundComplete('32')) unlocked.push('16');
+            if (isRoundComplete('16')) unlocked.push('quarter');
+            if (isRoundComplete('quarter')) unlocked.push('semi');
+            if (isRoundComplete('semi')) unlocked.push('final');
+            return unlocked;
+        }
+
+        let currentLang = 'en';
+        let championRevealed = false;
+
+        const bracketInner = document.getElementById('bracket-inner');
+        const progressCount = document.getElementById('progress-count');
+        const progressCountAr = document.getElementById('progress-count-ar');
+        const progressFill = document.getElementById('progress-fill');
+        const progressPct = document.getElementById('progress-pct');
+        const progressStatus = document.getElementById('progress-status');
+        const awardsSection = document.getElementById('awards-section');
+        const btnReset = document.getElementById('btn-reset');
+        const btnDownload = document.getElementById('btn-download');
+        const langToggle = document.getElementById('lang-toggle');
+        const counterNum = document.getElementById('counter-num');
+        const championOverlay = document.getElementById('champion-overlay');
+        const championFlag = document.getElementById('champion-flag');
+        const championTitle = document.getElementById('champion-title');
+        const championName = document.getElementById('champion-name');
+        const championSub = document.getElementById('champion-sub');
+        const overlayConfetti = document.getElementById('overlay-confetti');
+        const progressWrap = document.getElementById('progress-wrap');
+
+        const awardScorer = document.getElementById('award-scorer');
+        const awardScorerAr = document.getElementById('award-scorer-ar');
+        const awardPlayer = document.getElementById('award-player');
+        const awardPlayerAr = document.getElementById('award-player-ar');
+        const awardKeeper = document.getElementById('award-keeper');
+        const awardKeeperAr = document.getElementById('award-keeper-ar');
+
+        function renderBracket() {
+            const lang = currentLang;
+            const unlocked = getUnlockedRounds();
+
+            const wm = bracketInner.querySelector('.watermark');
+            bracketInner.innerHTML = '';
+            if (wm) bracketInner.appendChild(wm);
+
+            const colDefs = [
+                { key: '32', label_en: 'Round of 32', label_ar: 'دور الـ32', side: 'left' },
+                { key: '16', label_en: 'Round of 16', label_ar: 'دور الـ16', side: 'left' },
+                { key: 'quarter', label_en: 'QF', label_ar: 'ربع النهائي', side: 'left' },
+                { key: 'semi', label_en: 'SF', label_ar: 'نصف النهائي', side: 'left' },
+                { key: 'final', label_en: 'Final', label_ar: 'النهائي', side: 'center' },
+                { key: 'semi', label_en: 'SF', label_ar: 'نصف النهائي', side: 'right' },
+                { key: 'quarter', label_en: 'QF', label_ar: 'ربع النهائي', side: 'right' },
+                { key: '16', label_en: 'Round of 16', label_ar: 'دور الـ16', side: 'right' },
+                { key: '32', label_en: 'Round of 32', label_ar: 'دور الـ32', side: 'right' }
+            ];
+
+            const colMatches = {};
+            for (const def of colDefs) {
+                const key = def.key + '_' + def.side;
+                colMatches[key] = [];
+            }
+
+            for (const m of allMatches) {
+                let key;
+                if (m.round === 'final') {
+                    key = 'final_center';
+                } else {
+                    key = m.round + '_' + m.side;
+                }
+                if (colMatches[key]) colMatches[key].push(m);
+            }
+
+            for (const key in colMatches) {
+                colMatches[key].sort((a, b) => (a.row || 0) - (b.row || 0));
+            }
+
+            let colIndex = 0;
+            for (const def of colDefs) {
+                const key = def.key + '_' + def.side;
+                const matches = colMatches[key] || [];
+                const isCenter = def.side === 'center';
+
+                const col = document.createElement('div');
+                col.className = 'round-col' + (isCenter ? ' center-col' : '');
+                col.dataset.col = colIndex;
+                col.dataset.round = def.key;
+
+                const label = document.createElement('div');
+                label.className = 'round-label';
+                const done = countRoundPicks(def.key);
+                const total = totalMatchesInRound(def.key);
+                const complete = done === total && total > 0;
+                const labelText = lang === 'ar' ? def.label_ar : def.label_en;
+                label.innerHTML = labelText + (complete && total > 0 ? ' <span class="check">✓</span>' : '');
+                col.appendChild(label);
+
+                const matchContainer = document.createElement('div');
+                matchContainer.style.display = 'flex';
+                matchContainer.style.flexDirection = 'column';
+                matchContainer.style.gap = '6px';
+                matchContainer.style.flex = '1';
+                matchContainer.style.justifyContent = 'space-around';
+
+                if (isCenter) {
+                    matchContainer.style.justifyContent = 'center';
+                    matchContainer.style.alignItems = 'center';
+                }
+
+                for (const m of matches) {
+                    const card = createMatchCard(m, lang, unlocked);
+                    matchContainer.appendChild(card);
+                }
+
+                if (matches.length === 0) {
+                    const spacer = document.createElement('div');
+                    spacer.style.flex = '1';
+                    spacer.style.minHeight = '16px';
+                    matchContainer.appendChild(spacer);
+                }
+
+                col.appendChild(matchContainer);
+                bracketInner.appendChild(col);
+                colIndex++;
+            }
+
+            addConnectors();
+            updateProgress();
+            updateMobileTabs();
+            checkChampion();
+            applyMobileState();
+        }
+
+        function createMatchCard(match, lang, unlocked) {
+            const card = document.createElement('div');
+            card.className = 'match-card';
+            card.dataset.matchId = match.id;
+
+            const isUnlocked = unlocked.includes(match.round);
+            const isFinal = match.round === 'final';
+            const hasWinner = match.winner !== null;
+
+            const teams = getMatchTeams(match);
+            const t1 = teams.t1;
+            const t2 = teams.t2;
+
+            const isChampion = isFinal && hasWinner;
+            if (isChampion) {
+                card.classList.add('champion-card');
+                const burst = document.createElement('div');
+                burst.className = 'champion-burst';
+                card.style.position = 'relative';
+                card.style.overflow = 'visible';
+                card.appendChild(burst);
+            }
+
+            const teamsDiv = document.createElement('div');
+            teamsDiv.className = 'teams';
+
+            const canClick = isUnlocked && !hasWinner && (match.round === '32' || (t1 && t2));
+
+            const row1 = document.createElement('div');
+            row1.className = 'team-row';
+            const isWinner1 = hasWinner && match.winner && t1 && teamsEqual(match.winner, t1);
+
+            if (isWinner1) {
+                row1.classList.add('winner');
+            } else if (hasWinner && match.winner && t1 && !teamsEqual(match.winner, t1)) {
+                row1.classList.add('loser');
+            } else if (!isUnlocked || !t1) {
+                row1.classList.add('disabled');
+                if (!t1) row1.classList.add('tbd');
+            }
+
+            const t1Name = t1 ? (lang === 'ar' ? t1.ar : t1.en) : 'TBD';
+            const t1Flag = t1 ? t1.flag : '';
+            row1.innerHTML =
+                `<span class="flag">${t1Flag}</span><span class="tname ${lang === 'ar' ? 'ar' : 'en'}">${t1Name}</span>`;
+            if (canClick && t1) {
+                row1.style.cursor = 'pointer';
+                row1.dataset.tip = 'Click to advance';
+                row1.dataset.tipAr = 'انقر للتقدم';
+                row1.addEventListener('click', () => selectWinner(match, t1));
+            }
+            teamsDiv.appendChild(row1);
+
+            const vs = document.createElement('div');
+            vs.className = 'vs';
+            vs.textContent = 'vs';
+            teamsDiv.appendChild(vs);
+
+            const row2 = document.createElement('div');
+            row2.className = 'team-row';
+            const isWinner2 = hasWinner && match.winner && t2 && teamsEqual(match.winner, t2);
+
+            if (isWinner2) {
+                row2.classList.add('winner');
+            } else if (hasWinner && match.winner && t2 && !teamsEqual(match.winner, t2)) {
+                row2.classList.add('loser');
+            } else if (!isUnlocked || !t2) {
+                row2.classList.add('disabled');
+                if (!t2) row2.classList.add('tbd');
+            }
+
+            const t2Name = t2 ? (lang === 'ar' ? t2.ar : t2.en) : 'TBD';
+            const t2Flag = t2 ? t2.flag : '';
+            row2.innerHTML =
+                `<span class="flag">${t2Flag}</span><span class="tname ${lang === 'ar' ? 'ar' : 'en'}">${t2Name}</span>`;
+            if (canClick && t2) {
+                row2.style.cursor = 'pointer';
+                row2.dataset.tip = 'Click to advance';
+                row2.dataset.tipAr = 'انقر للتقدم';
+                row2.addEventListener('click', () => selectWinner(match, t2));
+            }
+            teamsDiv.appendChild(row2);
+
+            card.appendChild(teamsDiv);
+            return card;
+        }
+
+        function selectWinner(match, team) {
+            if (!team) return;
+            if (match.winner) return;
+
+            if (match.round === '32') {
+                match.winner = cloneTeam(team);
+                renderBracket();
+                return;
+            }
+
+            const p1 = match.parent1 ? matchMap[match.parent1] : null;
+            const p2 = match.parent2 ? matchMap[match.parent2] : null;
+            if (!p1 || !p2) return;
+            if (!p1.winner || !p2.winner) return;
+
+            const w1 = p1.winner;
+            const w2 = p2.winner;
+
+            if (teamsEqual(team, w1) || teamsEqual(team, w2)) {
+                match.winner = cloneTeam(team);
+                renderBracket();
+            }
+        }
+
+        function checkChampion() {
+            const finalMatch = matchMap['final'];
+            const hasChampion = finalMatch && finalMatch.winner !== null;
+
+            if (hasChampion && !championRevealed) {
+                championRevealed = true;
+                awardsSection.classList.add('visible');
+                showChampionOverlay(finalMatch.winner);
+                triggerConfetti();
+                updateButtons();
+            } else if (!hasChampion) {
+                championRevealed = false;
+            }
+            updateButtons();
+        }
+
+        function showChampionOverlay(team) {
+            if (!team) return;
+            const lang = currentLang;
+            championFlag.textContent = team.flag || '🏆';
+            championTitle.textContent = lang === 'ar' ? '🏆 البطل!' : '🏆 Champion!';
+            championName.textContent = lang === 'ar' ? team.ar : team.en;
+            championSub.textContent = lang === 'ar' ? 'بطل كأس العالم 2026' : 'World Cup 2026 Winner';
+
+            championOverlay.classList.add('visible');
+
+            const colors = ['#FFD700', '#C0392B', '#FF6B6B', '#4ECDC4', '#45B7D1', '#FFA07A', '#98D8C8', '#F7DC6F'];
+            overlayConfetti.innerHTML = '';
+            for (let i = 0; i < 120; i++) {
+                const piece = document.createElement('div');
+                piece.className = 'confetti-piece';
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                const size = 6 + Math.random() * 10;
+                const left = Math.random() * 100;
+                const duration = 2.5 + Math.random() * 3;
+                const delay = Math.random() * 2;
+                const shape = Math.random() > 0.5 ? '50%' : '2px';
+                piece.style.cssText =
+                    `left:${left}%;width:${size}px;height:${size*(0.5+Math.random()*0.9)}px;background:${color};border-radius:${shape};animation-duration:${duration}s;animation-delay:${delay}s;transform:rotate(${Math.random()*360}deg)`;
+                overlayConfetti.appendChild(piece);
+            }
+            setTimeout(() => {
+                championOverlay.classList.remove('visible');
+                overlayConfetti.innerHTML = '';
+            }, 4000);
+        }
+
+        function triggerConfetti() {
+            const container = document.getElementById('confetti-container');
+            const colors = ['#FFD700', '#C0392B', '#FF6B6B', '#4ECDC4', '#45B7D1', '#FFA07A', '#98D8C8', '#F7DC6F'];
+            for (let i = 0; i < 60; i++) {
+                const piece = document.createElement('div');
+                piece.className = 'confetti-piece';
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                const size = 5 + Math.random() * 8;
+                const left = Math.random() * 100;
+                const duration = 2 + Math.random() * 3;
+                const delay = Math.random() * 1.5;
+                const shape = Math.random() > 0.5 ? '50%' : '2px';
+                piece.style.cssText =
+                    `left:${left}%;width:${size}px;height:${size*(0.5+Math.random()*0.9)}px;background:${color};border-radius:${shape};animation-duration:${duration}s;animation-delay:${delay}s;transform:rotate(${Math.random()*360}deg)`;
+                container.appendChild(piece);
+                setTimeout(() => { if (piece.parentNode) piece.remove(); }, (duration + delay) * 1000 + 300);
+            }
+            setTimeout(() => { container.innerHTML = ''; }, 6000);
+        }
+
+        function updateProgress() {
+            const unlocked = getUnlockedRounds();
+            let currentRound = '32';
+            if (unlocked.includes('final')) currentRound = 'final';
+            else if (unlocked.includes('semi')) currentRound = 'semi';
+            else if (unlocked.includes('quarter')) currentRound = 'quarter';
+            else if (unlocked.includes('16')) currentRound = '16';
+
+            const done = countRoundPicks(currentRound);
+            const total = totalMatchesInRound(currentRound);
+            const pct = total > 0 ? Math.round((done / total) * 100) : 0;
+
+            const roundLabels = {
+                '32': { en: 'Round of 32', ar: 'دور الـ32' },
+                '16': { en: 'Round of 16', ar: 'دور الـ16' },
+                'quarter': { en: 'Quarterfinals', ar: 'ربع النهائي' },
+                'semi': { en: 'Semifinals', ar: 'نصف النهائي' },
+                'final': { en: 'Final', ar: 'النهائي' }
+            };
+            const label = roundLabels[currentRound] || roundLabels['32'];
+
+            progressCount.textContent = done;
+            progressCountAr.textContent = done;
+            progressFill.style.width = pct + '%';
+            progressPct.textContent = pct + '%';
+
+            if (pct === 100 && total > 0) {
+                progressStatus.innerHTML = '<span class="done">✓ Complete</span>';
+            } else {
+                progressStatus.textContent = '';
+            }
+
+            const labelEl = document.getElementById('progress-label');
+            const enSpan = labelEl.querySelector('.en-only');
+            const arSpan = labelEl.querySelector('.ar-only');
+            if (enSpan) {
+                enSpan.innerHTML =
+                `${label.en}: <span class="highlight" id="progress-count">${done}</span>/${total} complete`;
+            }
+            if (arSpan) {
+                arSpan.innerHTML =
+                    `${label.ar}: <span class="highlight" id="progress-count-ar">${done}</span>/${total} مكتمل`;
+            }
+        }
+
+        function updateMobileTabs() {
+            const rounds = ['32', '16', 'quarter', 'semi', 'final'];
+            const unlocked = getUnlockedRounds();
+            for (const r of rounds) {
+                const done = countRoundPicks(r);
+                const total = totalMatchesInRound(r);
+                const badge = document.getElementById('tab-badge-' + r);
+                if (badge) {
+                    badge.textContent = done + '/' + total;
+                    badge.className = 'badge' + (done === total && total > 0 ? ' done' : '');
+                }
+                const tab = document.querySelector(`.tab[data-round="${r}"]`);
+                if (tab) {
+                    const isActive = unlocked.includes(r) || r === '32';
+                    tab.style.opacity = isActive ? '1' : '0.35';
+                    tab.style.pointerEvents = isActive ? 'auto' : 'none';
+                }
+            }
+            const currentRound = getCurrentMobileRound();
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.toggle('active', tab.dataset.round === currentRound);
+            });
+        }
+
+        function getCurrentMobileRound() {
+            const unlocked = getUnlockedRounds();
+            if (unlocked.includes('final')) return 'final';
+            if (unlocked.includes('semi')) return 'semi';
+            if (unlocked.includes('quarter')) return 'quarter';
+            if (unlocked.includes('16')) return '16';
+            return '32';
+        }
+
+        function applyMobileState() {
+            const isMobile = window.innerWidth < 768;
+            const inner = bracketInner;
+            if (isMobile) {
+                inner.classList.add('mobile-active');
+                const currentRound = getCurrentMobileRound();
+                const cols = inner.querySelectorAll('.round-col');
+                cols.forEach(col => {
+                    const round = col.dataset.round || '';
+                    col.classList.toggle('active-col', round === currentRound);
+                });
+                const svgs = inner.querySelectorAll('.bracket-svg');
+                svgs.forEach(s => s.style.display = 'none');
+            } else {
+                inner.classList.remove('mobile-active');
+                const cols = inner.querySelectorAll('.round-col');
+                cols.forEach(col => col.classList.add('active-col'));
+                const svgs = inner.querySelectorAll('.bracket-svg');
+                svgs.forEach(s => s.style.display = '');
+            }
+        }
+
+        function addConnectors() {
+            const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            svg.setAttribute('class', 'bracket-svg');
+            svg.style.position = 'absolute';
+            svg.style.top = '0';
+            svg.style.left = '0';
+            svg.style.width = '100%';
+            svg.style.height = '100%';
+            svg.style.pointerEvents = 'none';
+            svg.style.zIndex = '1';
+
+            const cards = bracketInner.querySelectorAll('.match-card');
+            const cardMap = {};
+            cards.forEach(card => {
+                const id = card.dataset.matchId;
+                if (id) cardMap[id] = card;
+            });
+
+            const bracketRect = bracketInner.getBoundingClientRect();
+
+            for (const m of allMatches) {
+                if (m.round === '32') continue;
+                const childCard = cardMap[m.id];
+                if (!childCard) continue;
+                const p1 = m.parent1 ? matchMap[m.parent1] : null;
+                const p2 = m.parent2 ? matchMap[m.parent2] : null;
+                if (!p1 || !p2) continue;
+                const p1Card = cardMap[p1.id];
+                const p2Card = cardMap[p2.id];
+                if (!p1Card || !p2Card) continue;
+
+                const childRect = childCard.getBoundingClientRect();
+                const p1Rect = p1Card.getBoundingClientRect();
+                const p2Rect = p2Card.getBoundingClientRect();
+
+                const cx = childRect.left + childRect.width / 2 - bracketRect.left;
+                const cy = childRect.top + childRect.height / 2 - bracketRect.top;
+                const p1x = p1Rect.left + p1Rect.width / 2 - bracketRect.left;
+                const p1y = p1Rect.top + p1Rect.height / 2 - bracketRect.top;
+                const p2x = p2Rect.left + p2Rect.width / 2 - bracketRect.left;
+                const p2y = p2Rect.top + p2Rect.height / 2 - bracketRect.top;
+
+                const lineColor = 'rgba(255,215,0,0.08)';
+                const activeColor = 'rgba(255,215,0,0.22)';
+                const hasWinners = p1.winner && p2.winner;
+
+                const drawLine = (x1, y1, x2, y2) => {
+                    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                    line.setAttribute('x1', x1);
+                    line.setAttribute('y1', y1);
+                    line.setAttribute('x2', x2);
+                    line.setAttribute('y2', y2);
+                    line.setAttribute('stroke', hasWinners ? activeColor : lineColor);
+                    line.setAttribute('stroke-width', hasWinners ? '2' : '1.2');
+                    svg.appendChild(line);
+                };
+
+                const isLeft = m.side === 'left';
+                const isRight = m.side === 'right';
+                const isCenter = m.side === 'center';
+
+                if (isLeft || isCenter) {
+                    drawLine(p1x, p1y, cx, cy);
+                    drawLine(p2x, p2y, cx, cy);
+                }
+                if (isRight || isCenter) {
+                    drawLine(p1x, p1y, cx, cy);
+                    drawLine(p2x, p2y, cx, cy);
+                }
+            }
+            bracketInner.appendChild(svg);
+        }
+
+        function getAwardValues() {
+            const scorer = currentLang === 'ar' ? awardScorerAr.value : awardScorer.value;
+            const player = currentLang === 'ar' ? awardPlayerAr.value : awardPlayer.value;
+            const keeper = currentLang === 'ar' ? awardKeeperAr.value : awardKeeper.value;
+            return { scorer, player, keeper };
+        }
+
+        function updateButtons() {
+            const finalMatch = matchMap['final'];
+            const hasChampion = finalMatch && finalMatch.winner !== null;
+            const { scorer, player, keeper } = getAwardValues();
+            const allFilled = hasChampion && scorer && player && keeper;
+            btnDownload.disabled = !allFilled;
+        }
+
+        function resetAll() {
+            const lang = currentLang;
+            const msg = lang === 'ar' ?
+                'هل أنت متأكد من إعادة تعيين جميع التوقعات؟' :
+                'Are you sure you want to reset all predictions?';
+            if (!confirm(msg)) return;
+
+            const wrap = document.getElementById('bracket-wrap');
+            wrap.classList.add('fade-out');
+
+            setTimeout(() => {
+                for (const m of allMatches) {
+                    if (m.id === 'r32_L2') continue;
+                    m.winner = null;
+                }
+                const canadaMatch = matchMap['r32_L2'];
+                if (canadaMatch && canadaMatch.team2) {
+                    canadaMatch.winner = { en: canadaMatch.team2.en, ar: canadaMatch.team2.ar, flag: canadaMatch.team2
+                            .flag };
+                }
+
+                championRevealed = false;
+                awardsSection.classList.remove('visible');
+                championOverlay.classList.remove('visible');
+                document.getElementById('confetti-container').innerHTML = '';
+                document.getElementById('overlay-confetti').innerHTML = '';
+
+                awardScorer.value = '';
+                awardScorerAr.value = '';
+                awardPlayer.value = '';
+                awardPlayerAr.value = '';
+                awardKeeper.value = '';
+                awardKeeperAr.value = '';
+
+                wrap.classList.remove('fade-out');
+                renderBracket();
+                updateButtons();
+            }, 450);
+        }
+
+        function downloadPNG() {
+            const btn = btnDownload;
+            btn.disabled = true;
+            btn.textContent = '⏳ ' + (currentLang === 'ar' ? 'جاري التحضير...' : 'Preparing...');
+
+            if (!awardsSection.classList.contains('visible')) {
+                awardsSection.classList.add('visible');
+            }
+
+            const scorerVal = currentLang === 'ar' ? awardScorerAr.value : awardScorer.value;
+            const playerVal = currentLang === 'ar' ? awardPlayerAr.value : awardPlayer.value;
+            const keeperVal = currentLang === 'ar' ? awardKeeperAr.value : awardKeeper.value;
+
+            const target = document.getElementById('main-content');
+
+            const clone = target.cloneNode(true);
+
+            const progressClone = clone.querySelector('#progress-wrap');
+            if (progressClone) progressClone.remove();
+
+            const actionsClone = clone.querySelector('#action-buttons');
+            if (actionsClone) actionsClone.remove();
+
+            clone.querySelectorAll('.bracket-svg').forEach(s => s.remove());
+
+            clone.querySelectorAll('.watermark').forEach(w => w.remove());
+
+            clone.querySelectorAll('.scroll-hint').forEach(h => h.remove());
+
+            clone.querySelectorAll('.champion-burst').forEach(b => b.remove());
+
+            clone.querySelectorAll('.mobile-tabs').forEach(t => t.style.display = 'none');
+
+            const cloneScorer = clone.querySelector('#award-scorer');
+            const cloneScorerAr = clone.querySelector('#award-scorer-ar');
+            const clonePlayer = clone.querySelector('#award-player');
+            const clonePlayerAr = clone.querySelector('#award-player-ar');
+            const cloneKeeper = clone.querySelector('#award-keeper');
+            const cloneKeeperAr = clone.querySelector('#award-keeper-ar');
+
+            if (cloneScorer) cloneScorer.value = scorerVal;
+            if (cloneScorerAr) cloneScorerAr.value = scorerVal;
+            if (clonePlayer) clonePlayer.value = playerVal;
+            if (clonePlayerAr) clonePlayerAr.value = playerVal;
+            if (cloneKeeper) cloneKeeper.value = keeperVal;
+            if (cloneKeeperAr) cloneKeeperAr.value = keeperVal;
+
+            const bracketWrapClone = clone.querySelector('.bracket-wrap');
+            if (bracketWrapClone) {
+                bracketWrapClone.style.overflow = 'visible';
+                bracketWrapClone.style.width = '2000px';
+                bracketWrapClone.style.maxWidth = 'none';
+                bracketWrapClone.style.padding = '16px 8px';
+            }
+
+            const bracketInnerClone = clone.querySelector('.bracket-inner');
+            if (bracketInnerClone) {
+                bracketInnerClone.style.display = 'flex';
+                bracketInnerClone.style.flexDirection = 'row';
+                bracketInnerClone.style.flexWrap = 'nowrap';
+                bracketInnerClone.style.gap = '12px';
+                bracketInnerClone.style.justifyContent = 'flex-start';
+                bracketInnerClone.style.minWidth = 'fit-content';
+                bracketInnerClone.style.padding = '8px 4px';
+                bracketInnerClone.style.width = 'auto';
+
+                const cols = bracketInnerClone.querySelectorAll('.round-col');
+                cols.forEach(col => {
+                    col.style.display = 'flex';
+                    col.style.flexShrink = '0';
+                    col.style.minWidth = '150px';
+                    col.style.maxWidth = '180px';
+                });
+                const centerCol = bracketInnerClone.querySelector('.center-col');
+                if (centerCol) {
+                    centerCol.style.minWidth = '170px';
+                    centerCol.style.maxWidth = '200px';
+                }
+            }
+
+            const awardsClone = clone.querySelector('.awards-section');
+            if (awardsClone) {
+                awardsClone.style.width = '100%';
+                awardsClone.style.maxWidth = '100%';
+                awardsClone.style.display = 'block';
+            }
+
+            const copyrightFooter = document.createElement('div');
+            copyrightFooter.style.textAlign = 'center';
+            copyrightFooter.style.padding = '20px 0 8px';
+            copyrightFooter.style.color = 'rgba(255,215,0,0.35)';
+            copyrightFooter.style.fontSize = '0.8rem';
+            copyrightFooter.style.fontWeight = '600';
+            copyrightFooter.style.letterSpacing = '1px';
+            copyrightFooter.style.borderTop = '1px solid rgba(255,215,0,0.05)';
+            copyrightFooter.style.marginTop = '18px';
+            copyrightFooter.style.width = '100%';
+            copyrightFooter.innerHTML = '© Ayham_Megdadi • World Cup 2026';
+            clone.appendChild(copyrightFooter);
+
+            clone.style.backgroundColor = '#0a0e1a';
+            clone.style.padding = '20px';
+            clone.style.borderRadius = '12px';
+            clone.style.width = '2000px';
+            clone.style.maxWidth = 'none';
+            clone.style.overflow = 'visible';
+
+            const tempContainer = document.createElement('div');
+            tempContainer.style.position = 'absolute';
+            tempContainer.style.left = '-9999px';
+            tempContainer.style.top = '0';
+            tempContainer.style.width = '2000px';
+            tempContainer.style.backgroundColor = '#0a0e1a';
+            tempContainer.appendChild(clone);
+            document.body.appendChild(tempContainer);
+
+            html2canvas(clone, {
+                scale: 2,
+                backgroundColor: '#0a0e1a',
+                allowTaint: false,
+                useCORS: true,
+                logging: false,
+                width: 2000,
+                height: clone.scrollHeight,
+                windowWidth: 2000,
+                windowHeight: clone.scrollHeight,
+                onclone: function(doc) {
+                    const allEls = doc.querySelectorAll('*');
+                    allEls.forEach(el => {
+                        if (el.style) {
+                            el.style.visibility = 'visible';
+                            el.style.opacity = '1';
+                            if (el.tagName === 'DIV' && el.className.includes('round-col')) {
+                                el.style.display = 'flex';
+                            }
+                        }
+                    });
+                }
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = 'WorldCup2026_Prediction_AyhamMegdadi.png';
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+                tempContainer.remove();
+                btn.textContent = '📸 ' + (currentLang === 'ar' ? 'تحميل توقعي' : 'Download My Prediction');
+                btn.disabled = false;
+                updateButtons();
+            }).catch(err => {
+                console.error(err);
+                tempContainer.remove();
+                btn.textContent = '📸 ' + (currentLang === 'ar' ? 'تحميل توقعي' : 'Download My Prediction');
+                btn.disabled = false;
+                alert(currentLang === 'ar' ? 'حدث خطأ أثناء إنشاء الصورة' : 'Error generating image');
+            });
+        }
+
+        function toggleLang() {
+            currentLang = currentLang === 'en' ? 'ar' : 'en';
+            document.body.classList.toggle('rtl', currentLang === 'ar');
+            langToggle.textContent = currentLang === 'ar' ? '🇬🇧 EN / AR' : '🇸🇦 AR / EN';
+
+            document.querySelectorAll('.en-only').forEach(el => el.style.display = currentLang === 'en' ? '' : 'none');
+            document.querySelectorAll('.ar-only').forEach(el => el.style.display = currentLang === 'ar' ? '' : 'none');
+            document.querySelectorAll('.btn .en-only').forEach(el => el.style.display = currentLang === 'en' ? '' : 'none');
+            document.querySelectorAll('.btn .ar-only').forEach(el => el.style.display = currentLang === 'ar' ? '' : 'none');
+            document.querySelectorAll('#progress-label .en-only').forEach(el => el.style.display = currentLang === 'en' ?
+                '' : 'none');
+            document.querySelectorAll('#progress-label .ar-only').forEach(el => el.style.display = currentLang === 'ar' ?
+                '' : 'none');
+            document.querySelectorAll('.awards-title .en-only').forEach(el => el.style.display = currentLang === 'en' ?
+                '' : 'none');
+            document.querySelectorAll('.awards-title .ar-only').forEach(el => el.style.display = currentLang === 'ar' ?
+                '' : 'none');
+            document.querySelectorAll('.award-label .en-only').forEach(el => el.style.display = currentLang === 'en' ?
+                '' : 'none');
+            document.querySelectorAll('.award-label .ar-only').forEach(el => el.style.display = currentLang === 'ar' ?
+                '' : 'none');
+            document.querySelectorAll('.site-title .en-only').forEach(el => el.style.display = currentLang === 'en' ?
+                '' : 'none');
+            document.querySelectorAll('.site-title .ar-only').forEach(el => el.style.display = currentLang === 'ar' ?
+                '' : 'none');
+
+            const footer = document.getElementById('page-footer');
+            footer.querySelectorAll('.en-only').forEach(el => el.style.display = currentLang === 'en' ? '' : 'none');
+            footer.querySelectorAll('.ar-only').forEach(el => el.style.display = currentLang === 'ar' ? '' : 'none');
+
+            document.querySelectorAll('.award-item select.en-only').forEach(el => el.style.display = currentLang === 'en' ?
+                '' : 'none');
+            document.querySelectorAll('.award-item select.ar-only').forEach(el => el.style.display = currentLang === 'ar' ?
+                '' : 'none');
+
+            renderBracket();
+            updateButtons();
+        }
+
+        function initCounter() {
+            const min = 1000;
+            const max = 15000;
+            let count = Math.floor(Math.random() * (max - min + 1)) + min;
+            counterNum.textContent = count.toLocaleString();
+
+            function updateCounter() {
+                const inc = Math.floor(Math.random() * 3) + 1;
+                count += inc;
+                counterNum.textContent = count.toLocaleString();
+                counterNum.classList.add('pulse');
+                setTimeout(() => counterNum.classList.remove('pulse'), 200);
+                const nextDelay = 8000 + Math.random() * 7000;
+                setTimeout(updateCounter, nextDelay);
+            }
+            setTimeout(updateCounter, 3000 + Math.random() * 4000);
+        }
+
+        function initParticles() {
+            const canvas = document.getElementById('particles-canvas');
+            const ctx = canvas.getContext('2d');
+            let w, h;
+            const particles = [];
+            const count = 70;
+
+            function resize() {
+                w = canvas.width = window.innerWidth;
+                h = canvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', resize);
+            resize();
+
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * w;
+                    this.y = Math.random() * h;
+                    this.size = Math.random() * 2 + 0.5;
+                    this.speedX = (Math.random() - 0.5) * 0.25;
+                    this.speedY = (Math.random() - 0.5) * 0.25;
+                    this.opacity = Math.random() * 0.3 + 0.05;
+                }
+                update() {
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+                    if (this.x < 0 || this.x > w) this.speedX *= -1;
+                    if (this.y < 0 || this.y > h) this.speedY *= -1;
+                }
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(255, 215, 0, ${this.opacity})`;
+                    ctx.fill();
+                }
+            }
+            for (let i = 0; i < count; i++) particles.push(new Particle());
+
+            function animate() {
+                ctx.clearRect(0, 0, w, h);
+                for (const p of particles) { p.update();
+                    p.draw(); }
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+                        if (dist < 90) {
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.strokeStyle = `rgba(255, 215, 0, ${0.03 * (1 - dist / 90)})`;
+                            ctx.lineWidth = 0.5;
+                            ctx.stroke();
+                        }
+                    }
+                }
+                requestAnimationFrame(animate);
+            }
+            animate();
+        }
+
+        function initMobileTabs() {
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const round = this.dataset.round;
+                    const cols = bracketInner.querySelectorAll('.round-col');
+                    cols.forEach(col => {
+                        const r = col.dataset.round || '';
+                        col.classList.toggle('active-col', r === round);
+                    });
+                    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        }
+
+        function handleResize() { applyMobileState(); }
+
+        function init() {
+            initParticles();
+            initCounter();
+            initMobileTabs();
+            currentLang = 'en';
+            document.body.classList.remove('rtl');
+            langToggle.textContent = '🇸🇦 AR / EN';
+
+            document.querySelectorAll('.award-item select.en-only').forEach(el => el.style.display = '');
+            document.querySelectorAll('.award-item select.ar-only').forEach(el => el.style.display = 'none');
+
+            renderBracket();
+            updateButtons();
+
+            btnReset.addEventListener('click', resetAll);
+            btnDownload.addEventListener('click', downloadPNG);
+            langToggle.addEventListener('click', toggleLang);
+
+            [awardScorer, awardScorerAr, awardPlayer, awardPlayerAr, awardKeeper, awardKeeperAr].forEach(el => {
+                el.addEventListener('change', updateButtons);
+            });
+
+            window.addEventListener('resize', handleResize);
+
+            const finalMatch = matchMap['final'];
+            if (finalMatch && finalMatch.winner) {
+                championRevealed = true;
+                awardsSection.classList.add('visible');
+                triggerConfetti();
+                updateButtons();
+            }
+        }
+
+        const origRender = renderBracket;
+        renderBracket = function() {
+            origRender();
+            const unlocked = getUnlockedRounds();
+            if (unlocked.length > 1 && window.innerWidth >= 768) {
+                const nextRound = unlocked[unlocked.length - 1];
+                const cols = bracketInner.querySelectorAll('.round-col');
+                let targetCol = null;
+                for (const col of cols) {
+                    if (col.dataset.round === nextRound) { targetCol = col; break; }
+                }
+                if (targetCol) {
+                    const wrap = document.getElementById('bracket-wrap');
+                    const scrollLeft = targetCol.offsetLeft - wrap.offsetLeft - 20;
+                    wrap.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+                }
+            }
+            applyMobileState();
+        };
+
+        init();
+    </script>
+</body>
+</html>
